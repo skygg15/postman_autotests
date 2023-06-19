@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "7ce95fb7-c70a-499f-a190-49c9eabb9a84",
+		"name": "Pokemonbattle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26515921"
+	},
+	"item": [
+		{
+			"name": "Создание покемона",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "trainer_token",
+						"value": "9297244d0957075d7787e88cbeac49a0",
+						"type": "text"
+					},
+					{
+						"key": "trainer_name",
+						"value": "Allk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Бульбазавр\",\r\n    \"photo\": \"https://dolnikov.ru/pokemons/albums/001.png\"\r\n}"
+				},
+				"url": {
+					"raw": "https://pokemonbattle.me:9104/pokemons",
+					"protocol": "https",
+					"host": [
+						"pokemonbattle",
+						"me"
+					],
+					"port": "9104",
+					"path": [
+						"pokemons"
+					],
+					"query": [
+						{
+							"key": "trainer_token",
+							"value": "9297244d0957075d7787e88cbeac49a0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Положение  в покебол",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "trainer_name",
+						"value": "Allk",
+						"type": "text"
+					},
+					{
+						"key": "trainer_token",
+						"value": "9297244d0957075d7787e88cbeac49a0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "id",
+						"value": "8556",
+						"type": "text"
+					},
+					{
+						"key": "trainer_token",
+						"value": "8556",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pokemon_id\": \"8556\"\r\n}"
+				},
+				"url": {
+					"raw": "https://pokemonbattle.me:9104//trainers/add_pokeball",
+					"protocol": "https",
+					"host": [
+						"pokemonbattle",
+						"me"
+					],
+					"port": "9104",
+					"path": [
+						"",
+						"trainers",
+						"add_pokeball"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вызвать на битву другого покемона",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "trainer_token",
+						"value": "9297244d0957075d7787e88cbeac49a0",
+						"type": "text"
+					},
+					{
+						"key": "trainer_name",
+						"value": "Allk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"attacking_pokemon\": \"9\",\r\n    \"defending_pokemon\": \"30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pokemonbattle.me:9104/battle",
+					"protocol": "https",
+					"host": [
+						"pokemonbattle",
+						"me"
+					],
+					"port": "9104",
+					"path": [
+						"battle"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "$randomFirstName",
+			"value": "Случайное имя",
+			"type": "string"
+		}
+	]
+}
